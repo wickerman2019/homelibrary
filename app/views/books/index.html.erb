@@ -1,15 +1,15 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Books</h1>
+<h1>Книги</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Author</th>
-      <th>Publisher</th>
-      <th>Year</th>
-      <th>Genre</th>
+      <th>Имя</th>
+      <th>Автор</th>
+      <th>Издательство</th>
+      <th>Год</th>
+      <th>Жанр</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -22,9 +22,9 @@
         <td><%= book.publisher %></td>
         <td><%= book.year %></td>
         <td><%= book.genre %></td>
-        <td><%= link_to 'Show', book %></td>
-        <td><%= link_to 'Edit', edit_book_path(book) %></td>
-        <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Показать', book %></td>
+        <td><%= link_to 'Правка', edit_book_path(book) %></td>
+        <td><%= link_to 'Удалить', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -32,4 +32,4 @@
 
 <br>
 
-<%= link_to 'New Book', new_book_path %>
+<%= link_to 'Новая книга', new_book_path %>
