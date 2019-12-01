@@ -22,7 +22,8 @@
 
 <p>
   <strong>Жанр:</strong>
-  <%= @book.genre %>
+  <% @genre = Genre.find(@book.genre_id) %>
+  <%= @genre.name %>
 </p>
 
 <%= link_to 'Правка', edit_book_path(@book) %> |

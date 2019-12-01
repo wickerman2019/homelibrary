@@ -33,7 +33,7 @@
 
   <div class="field">
     <%= form.label :Жанр %>
-    <%= form.text_field :genre %>
+    <%= form.collection_select :genre_id, Genre.all, :id, :name %>
   </div>
 
   <div class="actions">

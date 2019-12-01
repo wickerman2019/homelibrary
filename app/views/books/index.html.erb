@@ -16,15 +16,16 @@
 
   <tbody>
     <% @books.each do |book| %>
+      <% @genre = Genre.find(book.genre_id) %>
       <tr>
         <td><%= book.name %></td>
         <td><%= book.author %></td>
         <td><%= book.publisher %></td>
         <td><%= book.year %></td>
-        <td><%= book.genre %></td>
+        <td><%= @genre.name %></td>
         <td><%= link_to 'Показать', book %></td>
         <td><%= link_to 'Правка', edit_book_path(book) %></td>
-        <td><%= link_to 'Удалить', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Удалить', book, method: :delete, data: { confirm: 'Вы уверены?' } %></td>        
       </tr>
     <% end %>
   </tbody>

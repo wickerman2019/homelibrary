@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Название:</strong>
+  <%= @genre.name %>
+</p>
+
+<%= link_to 'Правка', edit_genre_path(@genre) %> |
+<%= link_to 'Назад', genres_path %>
