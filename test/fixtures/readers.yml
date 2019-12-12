@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  takedate: 2019-12-12
+  returndate: 2019-12-12
+  book: one
+
+two:
+  name: MyString
+  takedate: 2019-12-12
+  returndate: 2019-12-12
+  book: two

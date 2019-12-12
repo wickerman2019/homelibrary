@@ -25,5 +25,41 @@
   <%= @book.genre.name %>
 </p>
 
+<h2>Читатели</h2>
+<% @book.readers.each do |reader| %>
+  <p>
+    <strong>Читатель:</strong>
+    <%= reader.name %>
+  </p>
+
+  <p>
+    <strong>Дата выдачи:</strong>
+    <%= reader.takedate %>
+  </p>
+  <p>
+  <strong>Дата возврата:</strong>
+  <%= reader.returndate %>
+</p>
+<% end %>
+
+<h2>Добавить читателя:</h2>
+<%= form_with(model: [ @book, @book.readers.build ], local: true) do |form| %>
+  <p>
+    <%= form.label :Читатель %><br>
+    <%= form.text_field :name %>
+  </p>
+  <p>
+    <%= form.label :"Дата выдачи" %><br>
+    <%= form.date_field :takedate %>
+  </p>
+  <p>
+  <%= form.label :"Дата возврата" %><br>
+  <%= form.date_field :returndate %>
+</p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+
 <%= link_to 'Правка', edit_book_path(@book) %> |
 <%= link_to 'Назад', books_path %>
