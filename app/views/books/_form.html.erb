@@ -28,7 +28,7 @@
 
   <div class="field">
     <%= form.label :Год %>
-    <%= form.number_field :year %>
+    <%= form.number_field :year, in:1900..2100 %>
   </div>
 
   <div class="field">

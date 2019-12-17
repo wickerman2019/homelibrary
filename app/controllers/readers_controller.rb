@@ -8,11 +8,17 @@ class ReadersController < ApplicationController
     
     # GET /readers/1/edit
     def edit  
-      @book = Book.find(@reader.id)      
+      @book = Book.find(@reader.book_id)      
     end
 
     def update
-      @reader.update(reader_params)
+      if @reader.update(reader_params)
+        @book = Book.find(@reader.book_id)
+        redirect_to book_path(@book), notice: 'Дата возврата успешно обновлена.' 
+      else
+        render :edit        
+      end
+      
     end
 
       private
