@@ -1,0 +1,36 @@
+<h1>Правка выдачи</h1>
+ 
+  <p>
+    <strong>Читатель:</strong>
+    <%= @reader.name %>
+  </p>
+<table>
+<tr>
+  <td>
+    <strong>Дата выдачи:</strong>
+    <%= @reader.takedate %>
+  </td>
+  <td>
+   <%= form_with(model: @reader, local: true) do |form| %>
+
+  <% if @reader.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@reader.errors.count, "error") %> prohibited this reader from being saved:</h2>
+
+      <ul>
+        <% @reader.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <strong><%= form.label :"Дата возврата" %></strong><br>
+    <%= form.date_field :returndate %><br>
+    <%= form.submit %>
+   <% end %>
+  </td>
+ 
+</table>
+
+<td><%= link_to 'Назад', book_path(@book.id) %></td>

@@ -31,15 +31,21 @@
     <strong>Читатель:</strong>
     <%= reader.name %>
   </p>
-
-  <p>
+<table>
+<tr>
+  <td>
     <strong>Дата выдачи:</strong>
     <%= reader.takedate %>
-  </p>
-  <p>
+  </td>
+  <td>
   <strong>Дата возврата:</strong>
   <%= reader.returndate %>
-</p>
+  </td>
+  <td>
+  <%= link_to 'Правка', edit_reader_path(reader) %>
+  </td>
+</tr>
+</table>
 <% end %>
 
 <h2>Добавить читателя:</h2>
